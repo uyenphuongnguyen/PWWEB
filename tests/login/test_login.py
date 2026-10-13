@@ -13,4 +13,4 @@ def test_login_success(page):
         VALID_PASSWORD
     )
 
-    assert "/users/login" not in page.url
+    assert page.url == "https://cms.anhtester.com/dashboard"

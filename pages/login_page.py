@@ -9,7 +9,7 @@ class LoginPage(BasePage):
 
     PASSWORD = "input[id='password']"
 
-    LOGIN = "button[normalize-space()='Login']"
+    LOGIN = "//button[normalize-space()='Login']"
 
     REMEMBER = "input[name='remember']"
 
@@ -17,6 +17,9 @@ class LoginPage(BasePage):
 
     def open(self):
         self.page.goto(BASE_URL + "/users/login")
+
+    def click_popup(self):
+        self.click(self.POPUP)
 
     def input_email(self, email):
         self.fill(self.EMAIL, email)
@@ -28,6 +31,7 @@ class LoginPage(BasePage):
         self.click(self.LOGIN)
 
     def login(self, email, password):
+        self.click_popup()
 
         self.input_email(email)
 
