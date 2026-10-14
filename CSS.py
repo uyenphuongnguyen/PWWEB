@@ -73,10 +73,11 @@ def test_fill_register():
         random_state = fake.state()
         random_city = fake.city()
         random_zipcode = fake.zipcode()
-        random_phone = fake.phone()
+        random_phone = "0961808954"
         page.locator("#state").fill(random_state)
         page.locator("#city").fill(random_city)
         page.locator("#zipcode").fill(random_zipcode)
+        page.wait_for_timeout(500)
         page.locator("#mobile_number").fill(random_phone)
 
         #click create account
